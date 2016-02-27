@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-02-27T09:45:01Z</date>
+    <date>2016-02-27T10:19:25Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -321,7 +321,7 @@
                                 </application>
                             </applications>
                             <valuemap>
-                                <name>BGP-errors</name>
+                                <name>BgpPeerError</name>
                             </valuemap>
                             <logtimefmt/>
                             <application_prototypes/>
@@ -367,7 +367,7 @@
                                 </application>
                             </applications>
                             <valuemap>
-                                <name>BGP-errors</name>
+                                <name>BgpPeerError</name>
                             </valuemap>
                             <logtimefmt/>
                             <application_prototypes/>
@@ -1904,7 +1904,20 @@ Review system logs</description>
     </triggers>
     <value_maps>
         <value_map>
-            <name>BGP-errors</name>
+            <name>BgpPeerAdminStatus</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>stop</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>start</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>BgpPeerError</name>
             <mappings>
                 <mapping>
                     <value>0</value>
@@ -2057,19 +2070,6 @@ Review system logs</description>
                 <mapping>
                     <value>1544</value>
                     <newvalue>Out of Resources</newvalue>
-                </mapping>
-            </mappings>
-        </value_map>
-        <value_map>
-            <name>BgpPeerAdminStatus</name>
-            <mappings>
-                <mapping>
-                    <value>1</value>
-                    <newvalue>stop</newvalue>
-                </mapping>
-                <mapping>
-                    <value>2</value>
-                    <newvalue>start</newvalue>
                 </mapping>
             </mappings>
         </value_map>
