@@ -45,14 +45,14 @@ Items
   * Ping check
   * Uptime
  
-Template have many triggers for BGP, interfaces, RE
+### Template have many triggers for BGP, interfaces, RE
 
-Template have many graphs for: 
+### Template have many graphs for: 
  * BGP prefixes advertise/recieve 
  * interfaces load and errors 
  * RE load: CPU, Memory, Temp
 
-One screen.
+### One screen.
 
 Installation
 ------------
