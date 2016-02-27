@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-02-27T10:19:25Z</date>
+    <date>2016-02-27T11:09:09Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -509,7 +509,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Accepted incoming prefixes for peer {#PEERADDR}</name>
+                            <name>Accepted receiving prefixes for peer {#PEERADDR}</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -553,7 +553,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Rejected incoming prefixes for peer {#PEERADDR}</name>
+                            <name>Rejected receiving prefixes for peer {#PEERADDR}</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -597,7 +597,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>All incoming prefixes for peer $1</name>
+                            <name>All receiving prefixes for peer $1</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
@@ -641,7 +641,7 @@
                             <application_prototypes/>
                         </item_prototype>
                         <item_prototype>
-                            <name>All outgoing prefixes for peer $1</name>
+                            <name>All advertising prefixes for peer $1</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
                             <multiplier>0</multiplier>
