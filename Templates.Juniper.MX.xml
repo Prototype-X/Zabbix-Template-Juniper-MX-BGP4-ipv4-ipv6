@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-02-27T11:09:09Z</date>
+    <date>2016-02-27T12:12:42Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -687,28 +687,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Juniper MX:jnxBgpM2PeerRemoteAs[{#PEERADDR}].regexp({$BGP_PEER_AS})}=0 and {Template Juniper MX:jnxBgpM2PeerState[{#PEERADDR}].last()}=6 and {Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].last()}&lt;0.8*{Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].avg(86400)}</expression>
-                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of incoming prefixes</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>2</priority>
-                            <description/>
-                            <type>0</type>
-                            <dependencies/>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{Template Juniper MX:jnxBgpM2PeerRemoteAs[{#PEERADDR}].regexp({$BGP_PEER_AS})}=1 and {Template Juniper MX:jnxBgpM2PeerState[{#PEERADDR}].last()}=6 and {Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].last()}&lt;0.8*{Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].avg(86400)}</expression>
-                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of incoming prefixes</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>4</priority>
-                            <description/>
-                            <type>0</type>
-                            <dependencies/>
-                        </trigger_prototype>
-                        <trigger_prototype>
                             <expression>{Template Juniper MX:jnxBgpM2PeerRemoteAs[{#PEERADDR}].regexp({$BGP_PEER_AS})}=0 and {Template Juniper MX:jnxBgpM2PeerState[{#PEERADDR}].last()}=6 and {Template Juniper MX:jnxBgpM2PrefixOutPrefixes[{#PEERADDR}].last()}&lt;0.8*{Template Juniper MX:jnxBgpM2PrefixOutPrefixes[{#PEERADDR}].avg(86400)}</expression>
-                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of outgoing prefixes</name>
+                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of advertising prefixes</name>
                             <url/>
                             <status>0</status>
                             <priority>2</priority>
@@ -718,7 +698,27 @@
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Template Juniper MX:jnxBgpM2PeerRemoteAs[{#PEERADDR}].regexp({$BGP_PEER_AS})}=1 and {Template Juniper MX:jnxBgpM2PeerState[{#PEERADDR}].last()}=6 and {Template Juniper MX:jnxBgpM2PrefixOutPrefixes[{#PEERADDR}].last()}&lt;0.8*{Template Juniper MX:jnxBgpM2PrefixOutPrefixes[{#PEERADDR}].avg(86400)}</expression>
-                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of outgoing prefixes</name>
+                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of advertising prefixes</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                            <dependencies/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template Juniper MX:jnxBgpM2PeerRemoteAs[{#PEERADDR}].regexp({$BGP_PEER_AS})}=0 and {Template Juniper MX:jnxBgpM2PeerState[{#PEERADDR}].last()}=6 and {Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].last()}&lt;0.8*{Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].avg(86400)}</expression>
+                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of receiving prefixes</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>2</priority>
+                            <description/>
+                            <type>0</type>
+                            <dependencies/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template Juniper MX:jnxBgpM2PeerRemoteAs[{#PEERADDR}].regexp({$BGP_PEER_AS})}=1 and {Template Juniper MX:jnxBgpM2PeerState[{#PEERADDR}].last()}=6 and {Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].last()}&lt;0.8*{Template Juniper MX:jnxBgpM2PrefixInPrefixesAccepted[{#PEERADDR}].avg(86400)}</expression>
+                            <name>{HOSTNAME} BGP peer {#PEERADDR} has lost more than 20% of receiving prefixes</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
