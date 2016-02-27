@@ -45,7 +45,7 @@ Items
   * Ping check
   * Uptime
  
-### Template have many triggers for BGP, interfaces, RE
+### Template have many triggers for BGP, interfaces, RE.
 
 ### Template have many graphs for: 
  * BGP prefixes advertise/recieve 
