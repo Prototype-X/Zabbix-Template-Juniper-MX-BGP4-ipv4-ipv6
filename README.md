@@ -1,5 +1,12 @@
 # Zabbix-Templates-Juniper-MX-BGP4-ipv4-ipv6
-Zabbix Template for Juniper MX discovery BGP4 peers ipv4 and ipv6, RE, interfaces
+For BGP peers use the BGP4-V2-MIB-JUNIPER(mib-jnx-bgpmib2.txt) mib, unfortunately ipv4 and ipv6 adresses return as hex symbols. Example ipv4 like [C0 A8 01 01], ipv6 like [20 01 0D B8 11 A3 09 D7 1F 34 8A 2E 07 A0 76 5D]
+
+Items
+-----
+
+  * Discovery: BGP peers ipv4 and ipv6
+  * Discovery: interfaces
+  * Discovery: RE: CPUs, Memory, Temp
 
 Installation
 ------------
