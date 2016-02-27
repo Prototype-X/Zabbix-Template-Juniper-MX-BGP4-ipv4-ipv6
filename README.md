@@ -16,7 +16,7 @@ Installation
   * 6 => established
 3. Add a value mapping named `BgpPeerError` with the following values:
 
-4. Import **Template Juniper MX.xml** file into Zabbix.
+4. Import **Template.Juniper.MX.xml** file into Zabbix.
 5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
 6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
 7. Associate **Template Juniper MX** template to the host.
