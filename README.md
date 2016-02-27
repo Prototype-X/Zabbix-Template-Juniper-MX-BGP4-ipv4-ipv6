@@ -4,22 +4,11 @@ Zabbix Template for Juniper MX discovery BGP4 peers ipv4 and ipv6, RE, interface
 Installation
 ------------
 
-1. Add a value mapping named `BgpPeerAdminStatus` with the following values:
-  * 1 => stop
-  * 2 => start
-2. Add a value mapping named `BgpPeerState` with the following values:
-  * 1 => idle
-  * 2 => connect
-  * 3 => active
-  * 4 => opensent
-  * 5 => openconfirm
-  * 6 => established
-3. Add a value mapping named `BgpPeerError` with the following values:
-
-4. Import **Template.Juniper.MX.xml** file into Zabbix.
-5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
-6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
-7. Associate **Template Juniper MX** template to the host.
+1. Import value mapping **zabbix.valuemaps.xml** file into Zabbix.
+2. Import **Template.Juniper.MX.xml** file into Zabbix.
+3. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
+4. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
+5. Associate **Template Juniper MX** template to the host.
 
 ### Requirements
 
