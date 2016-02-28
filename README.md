@@ -72,4 +72,5 @@ Installation
 ### Requirements
 
 **Zabbix 3.x.x**, need multiple OID support in SNMP discovery, without script for discovery.
+
 **Zabbix 2.x.x**, maybe work if use script for discovery. I dont tested.
