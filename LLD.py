@@ -12,10 +12,8 @@ def get_snmpindex(oid, oid_walk):
     re_oid = re.compile('(\.[\d]+)+')
     result_oid = re_oid.search(oid)
     part_oid = result_oid.group(0)
-    # print(part_oid)
     pos = oid_walk.find(part_oid[:8])
     oid_walk = oid_walk[pos:]
-    # print(oid_walk)
     index = part_oid.replace(oid_walk, '')
     return index[1:]
 
