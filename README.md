@@ -78,4 +78,4 @@ Installation
 
 **Zabbix 2.x.x**, maybe work if use script for discovery. I dont tested.
 
-For script **LLD.py** requirements: python 3, no dependies
+For script **LLD.py** requirements: python 3, snmpwalk tool
