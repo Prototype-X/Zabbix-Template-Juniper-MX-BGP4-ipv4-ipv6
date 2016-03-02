@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 # __author__ = 'maximus'
 import argparse
-import subprocess
-import re
 import ipaddress
 import json
+import re
+import subprocess
 
 
 def get_snmpindex(oid, oid_walk):
@@ -29,7 +29,8 @@ def convert_ip(ip_raw):
 
 
 def main():
-    snmpwalk = '/usr/bin/snmpwalk'
+    snmpwalk = '/usr/bin/snmpbulkwalk'
+    # snmpwalk = '/usr/bin/snmpwalk'
     all_oid_dict = {}
 
     # define CLI
