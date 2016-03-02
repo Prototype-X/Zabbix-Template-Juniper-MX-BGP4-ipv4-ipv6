@@ -82,6 +82,7 @@ Installation
 
 **Zabbix 3.x.x**, need multiple OID support in SNMP discovery, without script for discovery, IP addresses are displayed as hex numbers.
 
-**Zabbix 2.x.x**, maybe work if use script for discovery. I dont tested.
+**Zabbix 2.x.x**, maybe work if use script for discovery. I dont tested this. Template export from zabbix 3.x.x, fix
+discovery rule manually.
 
 For script **LLD.py** requirements: python 3, snmpwalk, snmpbulkwalk.
