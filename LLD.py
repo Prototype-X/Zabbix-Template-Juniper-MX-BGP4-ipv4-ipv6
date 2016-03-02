@@ -25,7 +25,7 @@ def convert_ip(ip_raw):
     elif len(ip_raw) == 32:
         return str(ipaddress.IPv6Address(int(ip_raw, 16)))
     else:
-        return None
+        return False
 
 
 def main():
@@ -49,7 +49,6 @@ def main():
     for data in out.decode().splitlines():
         array = data.split('=')
         oid = array[0][:-1]
-        print(oid)
         snmpindex = get_snmpindex(oid, args.index)
         value = array[1].split(':')[1][1:]
         if '.2636.5.1.1.2.1.1.1.11' in oid:
