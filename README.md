@@ -64,7 +64,7 @@ Installation
 2. Set type BGP4 discovery: SNMPv2 agent
 3. Set key:
 
-       discovery[{#PEERADDR}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11, {#PREFXTBL}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14, {#ADDRTYPE}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10]
+        discovery[{#PEERADDR}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11, {#PREFXTBL}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14, {#ADDRTYPE}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10]
 
 4. Associate **Template Juniper MX** to the host.
 5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
