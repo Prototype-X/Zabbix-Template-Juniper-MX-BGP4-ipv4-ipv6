@@ -72,7 +72,7 @@ Installation
 3. Set type BGP4 discovery: external check
 4. Set key:
 
-       LLD.py["-h", {HOST.CONN}, "-c", "{$SNMP_COMMUNITY}", "-i", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11", "-mi", "{#PEERADDR}", "-o", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10", "-m", "{#PREFXTBL}", "{#ADDRTYPE}"]
+        LLD.py["-h", {HOST.CONN}, "-c", "{$SNMP_COMMUNITY}", "-i", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11", "-mi", "{#PEERADDR}", "-o", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10", "-m", "{#PREFXTBL}", "{#ADDRTYPE}"]
 
 ### Requirements
 
