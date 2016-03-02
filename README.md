@@ -61,9 +61,14 @@ Installation
 ------------
 
 1. Import **Template.Juniper.MX.xml** file into Zabbix.
-2. Associate **Template Juniper MX** to the host.
-3. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
-4. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
+2. Set type BGP4 discovery: SNMPv2 agent
+3. Set key:
+
+       discovery[{#PEERADDR}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11, {#PREFXTBL}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14, {#ADDRTYPE}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10]
+
+4. Associate **Template Juniper MX** to the host.
+5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
+6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
 
 #### Script install
 1. Copy script to /usr/lib/zabbix/externalscripts
