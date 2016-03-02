@@ -60,11 +60,10 @@ Items
 Installation
 ------------
 
-1. Import value mapping **zabbix.valuemaps.xml** file into Zabbix.
-2. Import **Template.Juniper.MX.xml** file into Zabbix.
-3. Associate **Template Juniper MX** to the host.
-4. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
-5. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
+1. Import **Template.Juniper.MX.xml** file into Zabbix.
+2. Associate **Template Juniper MX** to the host.
+3. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
+4. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
 
 #### Script install
 1. Copy script to /usr/lib/zabbix/externalscripts
