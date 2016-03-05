@@ -48,7 +48,9 @@ Items
   * Ping check
   * Uptime
  
-### Triggers for BGP, interfaces, RE
+Triggers for BGP, interfaces, RE
+-----
+
  * Loss ping
  * Router restarted
  * Alarm
@@ -60,12 +62,15 @@ Items
  * No BGP prefixes
  * BGP peer down
 
-### Graphs
+Graphs
+-----
  * BGP prefixes advertise/recieve 
  * interfaces load and errors 
  * RE load: CPU, Memory, Temp
 
-### Screen
+Screen
+-----
+* one
 
 Installation
 ------------
