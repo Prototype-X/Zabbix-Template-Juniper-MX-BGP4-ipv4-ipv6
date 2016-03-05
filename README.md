@@ -2,7 +2,7 @@
 For BGP peers use the BGP4-V2-MIB-JUNIPER(mib-jnx-bgpmib2.txt), unfortunately ipv4 and ipv6 adresses return as hex numbers. Example ipv4 like: C0 A8 01 01, ipv6 like: 20 01 0D B8 11 A3 09 D7 1F 34 8A 2E 07 A0 76 5D. 
 To fix this use script **LLD.py** for discovery BGP4 peers.
 
-Used templates for BGP: [ZBX-CISCO-BGP4](https://github.com/jjmartres/Zabbix/tree/master/zbx-templates/zbx-cisco/zbx-cisco-bgp4)
+Used template for BGP: [ZBX-CISCO-BGP4](https://github.com/jjmartres/Zabbix/tree/master/zbx-templates/zbx-cisco/zbx-cisco-bgp4)
 
 Items BGP
 -----
@@ -86,7 +86,7 @@ Installation
 4. Associate **Template Juniper MX** to the host.
 5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
 6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
-These ASs have a high severity triggers
+These ASs have a high severity triggers.
 
 #### With script, IP shown as normal, Zabbix 2.X.X and above
 1. Copy script **LLD.py** to /usr/lib/zabbix/externalscripts
