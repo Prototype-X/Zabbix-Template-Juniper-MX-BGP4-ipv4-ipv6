@@ -89,15 +89,16 @@ Installation
 These ASs have a high severity triggers.
 
 #### With script, IP shown as normal, Zabbix 2.X.X and above
-1. Copy script **LLD.py** to /usr/lib/zabbix/externalscripts
-2. chmod +x LLD.py
-3. Set type BGP4 discovery: external check
-4. Set key:
+1. Import **Template.Juniper.MX.xml** file into Zabbix.
+2. Copy script **LLD.py** to /usr/lib/zabbix/externalscripts
+3. chmod +x LLD.py
+4. Set type BGP4 discovery: external check
+5. Set key:
 
         LLD.py["-h", {HOST.CONN}, "-c", "{$SNMP_COMMUNITY}", "-mi", "{#PEERADDR}", "-m", "{#PREFXTBL}", "{#ADDRTYPE}", "{#ASNUM}"]
 
-5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
-6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
+6. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
+7. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
 These ASs have a high severity triggers.
 
 Requirements
