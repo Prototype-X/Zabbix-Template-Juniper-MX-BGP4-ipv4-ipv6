@@ -1,6 +1,6 @@
 # Zabbix-Template-Juniper-MX-BGP4-ipv4-ipv6
 For BGP peers use the BGP4-V2-MIB-JUNIPER(mib-jnx-bgpmib2.txt), unfortunately ipv4 and ipv6 adresses return as hex numbers. Example ipv4 like: C0 A8 01 01, ipv6 like: 20 01 0D B8 11 A3 09 D7 1F 34 8A 2E 07 A0 76 5D. 
-To fix this use python 3 script **LLD.py** for discovery BGP4 peers.
+To fix this use script **LLD.py** for discovery BGP4 peers.
 
 Used templates for BGP: [ZBX-CISCO-BGP4](https://github.com/jjmartres/Zabbix/tree/master/zbx-templates/zbx-cisco/zbx-cisco-bgp4)
 
@@ -49,6 +49,16 @@ Items
   * Uptime
  
 ### Template have many triggers for BGP, interfaces, RE.
+ * Loss ping
+ * Router restarted
+ * Alarm
+ * Memory low
+ * CPU high usage
+ * Temp high
+ * Interface down
+ * Lost BGP prefixes
+ * No BGP prefixes
+ * BGP peer down
 
 ### Template have many graphs for: 
  * BGP prefixes advertise/recieve 
@@ -59,30 +69,35 @@ Items
 
 Installation
 ------------
-
+#### Without script, IP shown as hex numbers, only Zabbix 3.X.X
 1. Import **Template.Juniper.MX.xml** file into Zabbix.
 2. Set type BGP4 discovery: SNMPv2 agent
 3. Set key:
 
-        discovery[{#PEERADDR}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11, {#PREFXTBL}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14, {#ADDRTYPE}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10]
+        discovery[{#PEERADDR}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11, {#PREFXTBL}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14, {#ADDRTYPE}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10, {#ASNUM}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13]
 
 4. Associate **Template Juniper MX** to the host.
 5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
-6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3)
+6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
+These ASs have a high severity triggers
 
-#### Script install
+#### With script, IP shown as normal, Zabbix 2.X.X and above
 1. Copy script to /usr/lib/zabbix/externalscripts
 2. chmod +x LLD.py
 3. Set type BGP4 discovery: external check
 4. Set key:
 
-        LLD.py["-h", {HOST.CONN}, "-c", "{$SNMP_COMMUNITY}", "-i", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11", "-mi", "{#PEERADDR}", "-o", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14", ".1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10", "-m", "{#PREFXTBL}", "{#ADDRTYPE}"]
+        LLD.py["-h", {HOST.CONN}, "-c", "{$SNMP_COMMUNITY}", "-mi", "{#PEERADDR}", "-m", "{#PREFXTBL}", "{#ADDRTYPE}", "{#ASNUM}"]
 
-### Requirements
+5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
+6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
+These ASs have a high severity triggers.
 
-**Zabbix 3.x.x**, need multiple OID support in SNMP discovery, without script for discovery, IP addresses are displayed as hex numbers.
+Requirements
+------------
+For script **LLD.py**: python 3, snmpwalk, snmpbulkwalk.
 
-**Zabbix 2.x.x**, maybe work if use script for discovery. I dont tested this. Template for zabbix 3.x.x, fix
-discovery rule manually.
-
-For script **LLD.py** requirements: python 3, snmpwalk, snmpbulkwalk.
+Info
+------------
+Template exported from Zabbix 3.X.X.
+For Zabbix 2.X.X correct discovery rules.
