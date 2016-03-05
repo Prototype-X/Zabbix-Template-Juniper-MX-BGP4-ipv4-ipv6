@@ -64,12 +64,14 @@ Triggers for BGP, interfaces, RE
 
 Graphs
 -----
- * BGP prefixes advertise/recieve 
+
+ * BGP prefixes advertise/recieve
  * interfaces load and errors 
  * RE load: CPU, Memory, Temp
 
 Screen
 -----
+
 * one
 
 Installation
