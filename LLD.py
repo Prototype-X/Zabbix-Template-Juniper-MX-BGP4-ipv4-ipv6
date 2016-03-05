@@ -45,7 +45,8 @@ def main():
                         default=['.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14', '.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10',
                                  '.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13'],
                         help="An OID that is used for snmpwalking")
-    parser.add_argument('-m', '--macro', nargs='*', help="Zabbix MACRO name")
+    parser.add_argument('-m', '--macro', nargs='*', default=['{#PREFXTBL}', '{#ADDRTYPE}', '{#ASNUM}'],
+                        help="Zabbix MACRO name")
     args = parser.parse_args()
 
     out = subprocess.check_output([snmpwalk, '-Os', '-c' + args.community, '-v' + args.version, args.host, args.index])
