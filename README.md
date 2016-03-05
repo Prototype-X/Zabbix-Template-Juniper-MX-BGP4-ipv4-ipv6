@@ -89,7 +89,7 @@ Installation
 These ASs have a high severity triggers
 
 #### With script, IP shown as normal, Zabbix 2.X.X and above
-1. Copy script to /usr/lib/zabbix/externalscripts
+1. Copy script **LLD.py** to /usr/lib/zabbix/externalscripts
 2. chmod +x LLD.py
 3. Set type BGP4 discovery: external check
 4. Set key:
