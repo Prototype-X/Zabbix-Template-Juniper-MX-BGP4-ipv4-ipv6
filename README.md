@@ -97,8 +97,9 @@ These ASs have a high severity triggers.
 
         LLD.py["-h", {HOST.CONN}, "-c", "{$SNMP_COMMUNITY}", "-mi", "{#PEERADDR}", "-m", "{#PREFXTBL}", "{#ADDRTYPE}", "{#ASNUM}"]
 
-6. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
-7. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
+6. Associate **Template Juniper MX** to the host.
+7. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
+8. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
 These ASs have a high severity triggers.
 
 Requirements
