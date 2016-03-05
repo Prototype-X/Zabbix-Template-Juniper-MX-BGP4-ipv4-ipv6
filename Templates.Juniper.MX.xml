@@ -1154,7 +1154,7 @@ Review system logs</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>LLD.py[&quot;-h&quot;, {HOST.CONN}, &quot;-c&quot;, &quot;{$SNMP_COMMUNITY}&quot;, &quot;-mi&quot;, &quot;{#PEERADDR}&quot;, &quot;-m&quot;, &quot;{#PREFXTBL}&quot;, &quot;{#ADDRTYPE}&quot;, &quot;{#ASNUM}&quot;]</key>
-                    <delay>600</delay>
+                    <delay>1800</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
