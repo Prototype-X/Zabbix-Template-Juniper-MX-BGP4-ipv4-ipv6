@@ -48,7 +48,7 @@ Items
   * Ping check
   * Uptime
  
-### Template have many triggers for BGP, interfaces, RE.
+### Triggers for BGP, interfaces, RE
  * Loss ping
  * Router restarted
  * Alarm
@@ -60,12 +60,12 @@ Items
  * No BGP prefixes
  * BGP peer down
 
-### Template have many graphs for: 
+### Graphs
  * BGP prefixes advertise/recieve 
  * interfaces load and errors 
  * RE load: CPU, Memory, Temp
 
-### One screen.
+### Screen
 
 Installation
 ------------
