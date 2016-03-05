@@ -38,12 +38,16 @@ def main():
     parser.add_argument('-h', '--host', help='Host ip address')
     parser.add_argument('-v', '--version', choices=['1', '2c'], default='2c', help="The SNMP version to use")
     parser.add_argument('-c', '--community', default='public', help="The community string to use")
-    parser.add_argument('-i', '--index', help="An OID that is used for snmpwalking and return {#SNMPINDEX}")
+    parser.add_argument('-i', '--index', default='.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11',
+                        help="An OID that is used for snmpwalking and return {#SNMPINDEX}")
     parser.add_argument('-mi', '--macidx', default='{#SNMPVALUE}', help="Index macros name, default name {#SNMPVALUE}")
-    parser.add_argument('-o', '--oid', nargs='*', help="An OID that is used for snmpwalking")
+    parser.add_argument('-o', '--oid', nargs='*',
+                        default=['.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14', '.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10',
+                                 '.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13'],
+                        help="An OID that is used for snmpwalking")
     parser.add_argument('-m', '--macro', nargs='*', help="Zabbix MACRO name")
     args = parser.parse_args()
-    
+
     out = subprocess.check_output([snmpwalk, '-Os', '-c' + args.community, '-v' + args.version, args.host, args.index])
     snmpindex_dict = {}
     for data in out.decode().splitlines():
