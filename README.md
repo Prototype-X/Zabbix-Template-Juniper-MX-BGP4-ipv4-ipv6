@@ -87,6 +87,7 @@ Installation
 5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
 6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
 These ASs have a high severity triggers.
+7. Check interfaces discovery rule -> filter, edit or delete
 
 #### With script, IP shown as normal, Zabbix 2.X.X and above
 1. Import **Template.Juniper.MX.xml** file into Zabbix.
@@ -101,6 +102,7 @@ These ASs have a high severity triggers.
 7. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
 8. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
 These ASs have a high severity triggers.
+9. Check interfaces discovery rule -> filter, edit or delete
 
 Requirements
 ------------
