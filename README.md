@@ -90,7 +90,7 @@ These ASs have a high severity triggers.
 7. Check interfaces discovery rule -> filter, edit or delete
 
 #### With script, IP shown as normal, Zabbix 2.X.X and above
-1. Import **Template.Juniper.MX.xml** file into Zabbix.
+1. Import **Template.Juniper.MX.xml** file into Zabbix.(For Zabbix 2.X.X import valuemaps.xml first)
 2. Copy script **LLD.py** to /usr/lib/zabbix/externalscripts
 3. chmod +x LLD.py
 4. Set type BGP4 discovery: external check

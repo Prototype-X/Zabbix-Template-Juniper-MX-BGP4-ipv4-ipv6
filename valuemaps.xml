@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.0</version>
+    <date>2016-03-16T12:04:23Z</date>
+    <value_maps>
+        <value_map>
+            <name>BgpPeerAdminStatus</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>stop</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>start</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>BgpPeerError</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>None</newvalue>
+                </mapping>
+                <mapping>
+                    <value>256</value>
+                    <newvalue>Message Header Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>257</value>
+                    <newvalue>Connection Not Synchronized</newvalue>
+                </mapping>
+                <mapping>
+                    <value>258</value>
+                    <newvalue>Bad Message Length</newvalue>
+                </mapping>
+                <mapping>
+                    <value>259</value>
+                    <newvalue>Bad Message Type</newvalue>
+                </mapping>
+                <mapping>
+                    <value>512</value>
+                    <newvalue>Open Message Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>513</value>
+                    <newvalue>Unsupported Version Number</newvalue>
+                </mapping>
+                <mapping>
+                    <value>514</value>
+                    <newvalue>Bad Peer AS</newvalue>
+                </mapping>
+                <mapping>
+                    <value>515</value>
+                    <newvalue>Bad BGP Identifier</newvalue>
+                </mapping>
+                <mapping>
+                    <value>516</value>
+                    <newvalue>Unsupported Optional Parameter</newvalue>
+                </mapping>
+                <mapping>
+                    <value>517</value>
+                    <newvalue>Authentication Failure</newvalue>
+                </mapping>
+                <mapping>
+                    <value>518</value>
+                    <newvalue>Unacceptable Hold Time</newvalue>
+                </mapping>
+                <mapping>
+                    <value>768</value>
+                    <newvalue>Update Message Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>769</value>
+                    <newvalue>Malformed Attribute List</newvalue>
+                </mapping>
+                <mapping>
+                    <value>770</value>
+                    <newvalue>Unrecognized Well-Known Attribute</newvalue>
+                </mapping>
+                <mapping>
+                    <value>771</value>
+                    <newvalue>Missing Well-Known Attribute</newvalue>
+                </mapping>
+                <mapping>
+                    <value>772</value>
+                    <newvalue>Attribute Flags Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>773</value>
+                    <newvalue>Attribute Length Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>774</value>
+                    <newvalue>Invalid Origin Attribute</newvalue>
+                </mapping>
+                <mapping>
+                    <value>775</value>
+                    <newvalue>AS Routing Loop</newvalue>
+                </mapping>
+                <mapping>
+                    <value>776</value>
+                    <newvalue>Invalid Next_Hop Attribute</newvalue>
+                </mapping>
+                <mapping>
+                    <value>777</value>
+                    <newvalue>Optional Attribute Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>778</value>
+                    <newvalue>Invalid Network Field</newvalue>
+                </mapping>
+                <mapping>
+                    <value>779</value>
+                    <newvalue>Malformed AS_Path</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1024</value>
+                    <newvalue>Hold Timer Expired</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1280</value>
+                    <newvalue>Finite State Machine Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1281</value>
+                    <newvalue>Receive Unexpected Message in OpenSent State</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1282</value>
+                    <newvalue>Receive Unexpected Message in OpenConfirm State</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1283</value>
+                    <newvalue>Receive Unexpected Message in Established State</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1536</value>
+                    <newvalue>Cease</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1537</value>
+                    <newvalue>Maximum Number of Prefixes Reached</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1538</value>
+                    <newvalue>Administrative Shutdown</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1539</value>
+                    <newvalue>Peer De-configured</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1540</value>
+                    <newvalue>Administrative Reset</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1541</value>
+                    <newvalue>Connection Rejected</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1542</value>
+                    <newvalue>Other Configuration Change</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1543</value>
+                    <newvalue>Connection Collision Resolution</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1544</value>
+                    <newvalue>Out of Resources</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>BgpPeerState</name>
+            <mappings>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>idle</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>connect</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>active</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>opensent</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>openconfirm</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>established</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
