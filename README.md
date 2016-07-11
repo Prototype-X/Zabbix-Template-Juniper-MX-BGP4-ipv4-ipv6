@@ -112,3 +112,5 @@ Info
 ------------
 Template exported from Zabbix 3.X.X.
 For Zabbix 2.X.X correct discovery rules.
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Prototype-X/Zabbix-Template-Juniper-MX-BGP4-ipv4-ipv6?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
