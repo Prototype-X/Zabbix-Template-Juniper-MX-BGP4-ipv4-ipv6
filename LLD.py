@@ -49,7 +49,7 @@ def main():
                         help="Zabbix MACRO name")
     args = parser.parse_args()
 
-    out = subprocess.check_output([snmpwalk, '-Os', '-c' + args.community, '-v' + args.version, args.host, args.index])
+    out = subprocess.check_output([snmpwalk, '-Osx', '-c' + args.community, '-v' + args.version, args.host, args.index])
     snmpindex_dict = {}
     for data in out.decode().splitlines():
         array = data.split('=')
