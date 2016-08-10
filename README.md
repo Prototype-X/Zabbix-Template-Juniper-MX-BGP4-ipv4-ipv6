@@ -78,7 +78,8 @@ Installation
 ------------
 #### Without script, IP shown as hex numbers, only Zabbix 3.X.X
 1. Import **Template.Juniper.MX.xml** file into Zabbix.
-2. Set type BGP4 discovery: SNMPv2 agent
+2. Go to: **Template Juniper MX** - > **Discovery rules** -> **JunOS BGP4**
+2. Set type discovery rule: SNMPv2 agent
 3. Set key:
 
         discovery[{#PEERADDR}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11, {#PREFXTBL}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14, {#ADDRTYPE}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10, {#ASNUM}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13]
@@ -87,7 +88,8 @@ Installation
 5. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
 6. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
 These ASs have a high severity triggers.
-7. Check interfaces discovery rule -> filter, edit or delete
+7. Go to: **Template Juniper MX** -> **Discovery rules** -> **JunOS Interfaces** -> **Filters**
+8. Check filter, edit or delete.
 
 #### With script, IP shown as normal, Zabbix 2.X.X and above
 1. Import **Template.Juniper.MX.xml** file into Zabbix.(For Zabbix 2.X.X import valuemaps.xml first)
@@ -102,7 +104,8 @@ These ASs have a high severity triggers.
 7. Add to your host the **{$SNMP_COMMUNITY}** macro with your SNMP community as value.
 8. Add to your host the **{$BGP_PEER_AS}** macro with your list BGP peer remote AS as value (ex: ASN1|ASN2|ASN3).
 These ASs have a high severity triggers.
-9. Check interfaces discovery rule -> filter, edit or delete
+9. Go to: **Template Juniper MX** -> **Discovery rules** -> **JunOS Interfaces** -> **Filters**
+10. Check filter, edit or delete.
 
 Requirements
 ------------
