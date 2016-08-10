@@ -79,7 +79,7 @@ Installation
 #### Without script, IP shown as hex numbers, only Zabbix 3.X.X
 1. Import **Template.Juniper.MX.xml** file into Zabbix.
 2. Go to: **Template Juniper MX** - > **Discovery rules** -> **JunOS BGP4**
-2. Set type discovery rule: SNMPv2 agent
+2. Set type: SNMPv2 agent
 3. Set key:
 
         discovery[{#PEERADDR}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11, {#PREFXTBL}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.14, {#ADDRTYPE}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.10, {#ASNUM}, .1.3.6.1.4.1.2636.5.1.1.2.1.1.1.13]
@@ -95,8 +95,9 @@ These ASs have a high severity triggers.
 1. Import **Template.Juniper.MX.xml** file into Zabbix.(For Zabbix 2.X.X import valuemaps.xml first)
 2. Copy script **LLD.py** to /usr/lib/zabbix/externalscripts
 3. chmod +x LLD.py
-4. Set type BGP4 discovery: external check
-5. Set key:
+4. Go to: **Template Juniper MX** - > **Discovery rules** -> **JunOS BGP4**
+5. Set type: external check
+6. Set key:
 
         LLD.py["-h", {HOST.CONN}, "-c", "{$SNMP_COMMUNITY}", "-mi", "{#PEERADDR}", "-m", "{#PREFXTBL}", "{#ADDRTYPE}", "{#ASNUM}"]
 
