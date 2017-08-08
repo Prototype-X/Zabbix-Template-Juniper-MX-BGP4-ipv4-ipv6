@@ -6,6 +6,7 @@ import ipaddress
 import json
 import re
 import subprocess
+import copy
 
 
 def get_snmpindex(oid, oid_walk):
@@ -36,8 +37,16 @@ def main():
     # define CLI
     parser = argparse.ArgumentParser(conflict_handler='resolve')
     parser.add_argument('-h', '--host', help='Host ip address')
-    parser.add_argument('-v', '--version', choices=['1', '2c'], default='2c', help="The SNMP version to use")
+    parser.add_argument('-v', '--version', choices=['1', '2c', '3'], default='2c', help="The SNMP version to use")
     parser.add_argument('-c', '--community', default='public', help="The community string to use")
+    parser.add_argument('-l', '--level', choices=['noAuthNoPriv', 'authNoPriv', 'authPriv'], default='noAuthNoPriv',
+                        help="set security level (noAuthNoPriv|authNoPriv|authPriv")
+    parser.add_argument('-u', '--user', default='', help="set security name")
+    parser.add_argument('-a', '--auth_proto', default='', help="set authentication protocol (MD5|SHA)")
+    parser.add_argument('-A', '--auth_pass', default='', help="set authentication protocol pass phrase")
+    parser.add_argument('-x', '--privacy_proto', default='', help="set privacy protocol (DES|AES)")
+    parser.add_argument('-X', '--privacy_pass', default='', help="set privacy protocol pass phrase")
+    parser.add_argument('-n', '--context', default='', help="set context name (e.g. bridge1)")
     parser.add_argument('-i', '--index', default='.1.3.6.1.4.1.2636.5.1.1.2.1.1.1.11',
                         help="An OID that is used for snmpwalking and return {#SNMPINDEX}")
     parser.add_argument('-mi', '--macidx', default='{#SNMPVALUE}', help="Index macros name, default name {#SNMPVALUE}")
@@ -49,7 +58,26 @@ def main():
                         help="Zabbix MACRO name")
     args = parser.parse_args()
 
-    out = subprocess.check_output([snmpwalk, '-Osx', '-c' + args.community, '-v' + args.version, args.host, args.index])
+    snmp_params = {
+                   '1': {'noAuthNoPriv': [snmpwalk, '-v' + args.version, '-c' + args.community, args.host]},
+                   '2c': {'noAuthNoPriv': [snmpwalk, '-v' + args.version, '-c' + args.community, args.host]},
+                   '3': {
+                        'noAuthNoPriv': [snmpwalk, '-v' + args.version, '-l' + args.level, '-u' + args.user, args.host],
+                        'authNoPriv': [snmpwalk, '-v' + args.version, '-l ' + args.level, '-u' + args.user,
+                                       '-a' + args.auth_proto, '-A' + args.auth_pass, args.host, args.index],
+                        'authPriv': [snmpwalk, '-v' + args.version, '-l' + args.level, '-u' + args.user,
+                                     '-a' + args.auth_proto, '-A' + args.auth_pass, '-x' + args.privacy_proto,
+                                     '-X' + args.privacy_pass, args.host]
+                        }
+                   }
+
+    params = snmp_params[args.version][args.level]
+    if args.context:
+        params.append('-n' + args.context)
+    snmp_index = copy.deepcopy(params)
+    snmp_index.insert(1, '-Osx')
+    snmp_index.append(args.index)
+    out = subprocess.check_output(snmp_index)
     snmpindex_dict = {}
     for data in out.decode().splitlines():
         array = data.split('=')
@@ -61,10 +89,13 @@ def main():
         snmpindex_dict[snmpindex] = value
     all_oid_dict[args.macidx] = snmpindex_dict.copy()
 
+    snmp_oid = copy.deepcopy(params)
+    snmp_oid.insert(1, '-Os')
     for oid_walk, macro in list(zip(args.oid, args.macro)):
         oid_dict = {}
-        out = subprocess.check_output([snmpwalk, '-Os', '-c' + args.community, '-v' + args.version, args.host,
-                                       oid_walk])
+        snmp_oid.append(oid_walk)
+        out = subprocess.check_output(snmp_oid)
+        snmp_oid.pop()
         for data in out.decode().splitlines():
             array = data.split('=')
             oid = array[0][:-1]
