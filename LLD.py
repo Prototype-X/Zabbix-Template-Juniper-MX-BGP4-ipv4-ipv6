@@ -35,8 +35,8 @@ def main():
     all_oid_dict = {}
 
     # define CLI
-    parser = argparse.ArgumentParser(conflict_handler='resolve')
-    parser.add_argument('-h', '--host', help='Host ip address')
+    parser = argparse.ArgumentParser(conflict_handler='resolve', add_help=True)
+    parser.add_argument('-h', '--host', help='Host ip address', required=True)
     parser.add_argument('-v', '--version', choices=['1', '2c', '3'], default='2c', help="The SNMP version to use")
     parser.add_argument('-c', '--community', default='public', help="The community string to use")
     parser.add_argument('-l', '--level', choices=['noAuthNoPriv', 'authNoPriv', 'authPriv'], default='noAuthNoPriv',
