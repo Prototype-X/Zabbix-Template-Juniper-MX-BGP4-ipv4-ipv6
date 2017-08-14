@@ -108,6 +108,20 @@ These ASs have a high severity triggers.
 9. Go to filter rules for interfaces: **Template Juniper MX** -> **Discovery rules** -> **JunOS Interfaces** -> **Filters**
 10. Check filter, edit or delete.
 
+#### Script snmp v3 example:
+
+        LLD.py["-h", {HOST.CONN}, "-v3", "-u{$SNMP_USER}", "-l{$SNMP_LEVEL}", "-aSHA", "-A{$SNMP_AUTH}", "-xAES", "-X{$SNMP_PRIV}", "-mi", "{#PEERADDR}", "-m", "{#PREFXTBL}", "{#ADDRTYPE}", "{#ASNUM}"]
+
+SNMP Version 3 options:
+
+    -a PROTOCOL		set authentication protocol (MD5|SHA)
+    -A PASSPHRASE		set authentication protocol pass phrase
+    -l LEVEL		set security level (noAuthNoPriv|authNoPriv|authPriv)
+    -n CONTEXT		set context name (e.g. bridge1)
+    -u USER-NAME		set security name (e.g. bert)
+    -x PROTOCOL		set privacy protocol (DES|AES)
+    -X PASSPHRASE		set privacy protocol pass phrase
+
 Requirements
 ------------
 For script **LLD.py**: python 3, snmpwalk, snmpbulkwalk.
