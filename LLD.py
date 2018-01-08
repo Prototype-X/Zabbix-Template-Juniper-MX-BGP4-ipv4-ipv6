@@ -7,7 +7,7 @@ import json
 import re
 import subprocess
 import copy
-
+import os
 
 def get_snmpindex(oid, oid_walk):
     re_oid = re.compile('(\.[\d]+)+')
@@ -77,7 +77,8 @@ def main():
     snmp_index = copy.deepcopy(params)
     snmp_index.insert(1, '-Osx')
     snmp_index.append(args.index)
-    out = subprocess.check_output(snmp_index)
+    with open(os.devnull, 'w') as devnull:
+       out = subprocess.check_output(snmp_index, stderr=devnull)
     snmpindex_dict = {}
     for data in out.decode().splitlines():
         array = data.split('=')
@@ -94,7 +95,8 @@ def main():
     for oid_walk, macro in list(zip(args.oid, args.macro)):
         oid_dict = {}
         snmp_oid.append(oid_walk)
-        out = subprocess.check_output(snmp_oid)
+        with open(os.devnull, 'w') as devnull:
+            out = subprocess.check_output(snmp_oid, stderr=devnull)
         snmp_oid.pop()
         for data in out.decode().splitlines():
             array = data.split('=')
